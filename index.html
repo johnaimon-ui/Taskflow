@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+</head>
+<body>
+    <header class="header">
+        <p>Kanban Board</p>
+
+        <div class="workspace">
+            <p>Workspace</p>
+            <i class="ri-arrow-drop-down-line"></i>
+        </div>
+        
+        <div class="search">
+        <i class="ri-search-line"></i>
+        <input type="text" placeholder="Search Projects, tasks, and more..." class="search-bar">
+        </div>
+
+        <i class="ri-moon-fill"></i>
+
+        <div class="addbtn">
+            <i class="ri-add-line"></i>
+            <p>Board</p>
+        </div>
+        
+        <div class="profile">
+            <p>Profile</p>
+            <i class="ri-arrow-drop-down-line"></i>
+        </div>
+    </header>
+
+    <main>
+        <p class="workspace-info">Workspace > My Project</p>
+
+        <div class="info-left">
+            <p class="project-name">My Project</p>
+            <p class="project-description">Website refresh. A Clearer home for our Product</p>
+        </div>
+
+        <div class="info-right">
+            <!-- <div class="members">
+                <img src="member1.jpg" alt="Member 1" class="member-avatar">
+                <img src="member2.jpg" alt="Member 2" class="member-avatar">
+                <img src="member3.jpg" alt="Member 3" class="member-avatar">
+            </div> -->
+
+        <button class="share"><i class="ri-share-line"></i> Share</button>
+        </div>
+
+        <div class="navbar-left">
+            <button class="nav-btn active">Board</button>
+            <button class="nav-btnLeft">List</button>
+            <button class="nav-btnLeft">Calendar</button>
+            <button class="nav-btnLeft">Notes</button>
+        </div>
+
+        <div class="navbar-right">
+            <button class="nav-btnRight"><i class="ri-filter-2-line"></i> Filter</button>
+            <button class="nav-btnRight"><i class="ri-user-line"></i>My Tasks</button>
+            <button><i class="ri-more-line"></i></button>
+        </div>
+        <hr>
+        
+        <div class="kanbanboard">
+
+            <div class="firstboard">
+                <title>To Do</title>
+                <i class="ri-more-line"></i>
+
+                <section class="content">
+                    <title>Content</title> <p>-Medium</p>
+                    <p>Write homepage Copy</p>
+
+                    <p class="deadline">Oct 14</p>
+                    <p class="checklist">0/3</p>
+                    <p>Profile</p>
+                </section>
+
+                <section class="Development">
+                    <title>Development</title> <p>-High</p>
+                    <p>Build responsive pages</p>
+
+                    <p class="deadline">Oct 16</p>
+                    <p class="checklist">0/4</p>
+                    <p>Profile</p>
+                </section>
+
+                <section class="Review">
+                    <title>Review</title> <p></p>
+                    <p>QA the launch experience</p>
+
+                    <p class="deadline">Oct 19</p>
+                    <p class="checklist">0/4</p>
+                    <p>Profile</p>
+                </section>
+
+                <p><i class="ri-add-line"></i> Add Card</p>
+            </div>
+
+            <div class="secondboard">
+                <title>In Progress</title>
+                <i class="ri-more-line"></i>
+
+                <section class="">
+                    <title>Design</title> <p>-High</p>
+                    <p>Design homepage</p>
+
+                    <p class="deadline">Oct 12</p>
+                    <p class="checklist">2/4</p>
+                    <p>Profile</p>
+                    <p class="attachment">2 attachments</p>
+                    <p class="attachment">2 comments</p>
+                </section>
+
+                <section class="Design">
+                    <title>Design</title> <p>-Medium</p>
+                    <p>Create component library</p>
+
+                    <p class="deadline">Oct 13</p>
+                    <p class="checklist">3/6</p>
+                    <p>Profile</p>
+
+                </section>
+
+                <p><i class="ri-add-line"></i> Add Card</p>
+            </div>
+
+            <div class="thirdboard">
+                <title>Done</title>
+                <i class="ri-more-line"></i>
+            </div>
+            <div class="fourthboard">
+                <p><i class="ri-add-line"></i> Add Column</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
