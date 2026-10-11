@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanban Board</title>
+    <link rel="stylesheet" href="CSS/stytle.css" />
     <link
         href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
         rel="stylesheet"
@@ -11,7 +12,9 @@
 </head>
 <body>
     <header class="header">
-        <h1>Kanban Board</h1>
+        <h1> <i class="ri-circle-line" aria-hidden="true"></i>
+            
+        Kanban Board</h1>
 
         <nav class="workspace-nav" aria-label="Workspace menu">
             <button class="workspace" type="button">
@@ -20,10 +23,13 @@
             </button>
         </nav>
 
-        <form class="search" role="search">
-            <label class="sr-only" for="project-search">Search projects and tasks</label>
+        <form class="search">
+
             <i class="ri-search-line" aria-hidden="true"></i>
+            
+
             <input id="project-search" type="search" placeholder="Search Projects, tasks, and more..." class="search-bar" aria-label="Search projects and tasks">
+            
         </form>
 
         <div class="header-actions" aria-label="Board actions">
