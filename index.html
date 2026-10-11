@@ -11,33 +11,35 @@
 </head>
 <body>
     <header class="header">
-        <p>Kanban Board</p>
+        <h1>Kanban Board</h1>
 
-        <div class="workspace">
-            <p>Workspace</p>
-            <i class="ri-arrow-drop-down-line"></i>
-        </div>
-        
+        <button class="workspace">
+            <span>Workspace</span>
+            <i class="ri-arrow-drop-down-line" aria-hidden="true"></i>
+        </button>
+
         <div class="search">
-        <i class="ri-search-line"></i>
-        <input type="text" placeholder="Search Projects, tasks, and more..." class="search-bar">
+            <i class="ri-search-line" aria-hidden="true"></i>
+            <input type="search" placeholder="Search Projects, tasks, and more..." class="search-bar" aria-label="Search">
         </div>
 
-        <i class="ri-moon-fill"></i>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="ri-moon-fill" aria-hidden="true"></i>
+        </button>
 
-        <div class="addbtn">
-            <i class="ri-add-line"></i>
-            <p>Board</p>
-        </div>
-        
-        <div class="profile">
-            <p>Profile</p>
-            <i class="ri-arrow-drop-down-line"></i>
-        </div>
+        <button class="addbtn">
+            <i class="ri-add-line" aria-hidden="true"></i>
+            <span>Board</span>
+        </button>
+
+        <button class="profile">
+            <span>Profile</span>
+            <i class="ri-arrow-drop-down-line" aria-hidden="true"></i>
+        </button>
     </header>
 
     <main>
-        <p class="workspace-info">Workspace > My Project</p>
+        <p class="workspace-info">Workspace &gt; My Project</p>
 
         <div class="info-left">
             <p class="project-name">My Project</p>
@@ -64,22 +66,22 @@
         <div class="navbar-right">
             <button class="nav-btnRight"><i class="ri-filter-2-line"></i> Filter</button>
             <button class="nav-btnRight"><i class="ri-user-line"></i>My Tasks</button>
-            <button><i class="ri-more-line"></i></button>
+            <button aria-label="More options"><i class="ri-more-line" aria-hidden="true"></i></button>
         </div>
         <hr>
         
         <div class="kanbanboard">
 
             <div class="firstboard">
-                <title>To Do</title>
-                <i class="ri-more-line"></i>
+                <h2>To Do</h2>
+                <button aria-label="Column options"><i class="ri-more-line" aria-hidden="true"></i></button>
 
                 <section class="content">
-                    <title>Content</title> <p>-Medium</p>
+                    <span class="label">Content</span> <span class="priority">Medium</span>
                     <p>Write homepage Copy</p>
 
-                    <p class="deadline">Oct 14</p>
-                    <p class="checklist">0/3</p>
+                    <p class="deadline"><i class="ri-calendar-line"></i>Oct 14</p>
+                    <p class="checklist"><i class="ri-list-check-3"></i>0/3</p>
                     <p>Profile</p>
                 </section>
 
@@ -87,33 +89,33 @@
                     <title>Development</title> <p>-High</p>
                     <p>Build responsive pages</p>
 
-                    <p class="deadline">Oct 16</p>
-                    <p class="checklist">0/4</p>
+                    <p class="deadline"><i class="ri-calendar-line"></i>Oct 16</p>
+                    <p class="checklist"><i class="ri-list-check-3"></i>0/4</p>
                     <p>Profile</p>
                 </section>
 
                 <section class="Review">
-                    <title>Review</title> <p></p>
+                    <span class="label">Review</span>
                     <p>QA the launch experience</p>
 
-                    <p class="deadline">Oct 19</p>
-                    <p class="checklist">0/4</p>
+                    <p class="deadline"><i class="ri-calendar-line"></i>Oct 19</p>
+                    <p class="checklist"><i class="ri-list-check-3"></i>0/4</p>
                     <p>Profile</p>
                 </section>
 
-                <p><i class="ri-add-line"></i> Add Card</p>
+                <button class="add-card"><i class="ri-add-line" aria-hidden="true"></i> Add Card</button>
             </div>
 
             <div class="secondboard">
                 <title>In Progress</title>
                 <i class="ri-more-line"></i>
 
-                <section class="">
+                <section class="Design">
                     <title>Design</title> <p>-High</p>
                     <p>Design homepage</p>
 
-                    <p class="deadline">Oct 12</p>
-                    <p class="checklist">2/4</p>
+                    <p class="deadline"><i class="ri-calendar-line"></i>Oct 12</p>
+                    <p class="checklist"><i class="ri-list-check-3"></i>2/4</p>
                     <p>Profile</p>
                     <p class="attachment">2 attachments</p>
                     <p class="attachment">2 comments</p>
@@ -123,8 +125,8 @@
                     <title>Design</title> <p>-Medium</p>
                     <p>Create component library</p>
 
-                    <p class="deadline">Oct 13</p>
-                    <p class="checklist">3/6</p>
+                    <p class="deadline"><i class="ri-calendar-line"></i>Oct 13</p>
+                    <p class="checklist"><i class="ri-list-check-3"></i>3/6</p>
                     <p>Profile</p>
 
                 </section>
@@ -135,10 +137,37 @@
             <div class="thirdboard">
                 <title>Done</title>
                 <i class="ri-more-line"></i>
+
+                <section class="Research">
+                    <title>Research</title> <p></p>
+                    <p>Audit the current website</p>
+
+                    <p class="deadline"><i class="ri-checkbox-circle-line"></i>Oct 3</p>
+                    <p class="checklist"><i class="ri-list-check-3"></i>4/4</p>
+                    <p>Profile</p>
+                    
+                </section>
+
+                <section class="Planning">
+                    <title>Planning</title> <p></p>
+                    <p>Define sitemap</p>
+
+                    <p class="deadline"><i class="ri-checkbox-circle-line"></i>Oct 6</p>
+                    <p class="checklist"><i class="ri-list-check-3"></i>3/3</p>
+                    <p>Profile</p>
+
+                </section>
+
+                <p><i class="ri-add-line"></i> Add Card</p>
+
+
             </div>
             <div class="fourthboard">
-                <p><i class="ri-add-line"></i> Add Column</p>
+                <button class="add-column"><i class="ri-add-line" aria-hidden="true"></i> Add Column</button>
             </div>
+
+        <div class="update">
+            <p>• 7 Tasks · 2 Completed · Updated a few minutes ago</p>
         </div>
     </main>
 </body>
