@@ -1,203 +1,254 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kanban Board</title>
     <link rel="stylesheet" href="CSS/stytle.css" />
     <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-        rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
     />
-</head>
-<body>
-    <header class="header">
-        <h1> <i class="ri-circle-line" aria-hidden="true"></i>
-            
-        Kanban Board</h1>
+  </head>
+  <body>
+    <header class="topbar" aria-label="Main navigation">
+      <div class="brand-area">
+        <button class="menu-button" type="button" aria-label="Menu">
+          <i class="ri-menu-line" aria-hidden="true"></i>
+        </button>
+        <span class="brand-name">Task Flow</span>
+      </div>
 
-        <nav class="workspace-nav" aria-label="Workspace menu">
-            <button class="workspace" type="button">
-                <span>Workspace</span>
-                <i class="ri-arrow-drop-down-line" aria-hidden="true"></i>
-            </button>
-        </nav>
+      <div class="workspace-menu">
+        <span>Studio workspace</span>
+      </div>
 
-        <form class="search">
+      <div class="search-wrap">
+        <i class="ri-search-line" aria-hidden="true"></i>
+        <input type="search" value="" placeholder="Search projects, tasks and notes" aria-label="Search projects, tasks and notes" />
+        <span class="shortcut">⌘ K</span>
+      </div>
 
-            <i class="ri-search-line" aria-hidden="true"></i>
-            
-
-            <input id="project-search" type="search" placeholder="Search Projects, tasks, and more..." class="search-bar" aria-label="Search projects and tasks">
-            
-        </form>
-
-        <div class="header-actions" aria-label="Board actions">
-            <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-                <i class="ri-moon-fill" aria-hidden="true"></i>
-            </button>
-
-            <button class="addbtn" type="button">
-                <i class="ri-add-line" aria-hidden="true"></i>
-                <span>Board</span>
-            </button>
-
-            <button class="profile" type="button">
-                <span>Profile</span>
-                <i class="ri-arrow-drop-down-line" aria-hidden="true"></i>
-            </button>
-        </div>
+      <div class="top-actions">
+        <button class="icon-btn" type="button" aria-label="Theme toggle">
+          <i class="ri-moon-line" aria-hidden="true"></i>
+        </button>
+        <button class="board-btn" type="button">
+          <i class="ri-add-line" aria-hidden="true"></i>
+          <span>Board</span>
+        </button>
+        <div class="avatar-mini" aria-label="User avatar">AM</div>
+      </div>
     </header>
 
-    <main id="main-content">
-        <nav class="workspace-info" aria-label="Breadcrumb">
-            <p>Workspace &gt; My Project</p>
-        </nav>
+    <main class="page-shell">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <span>Workspace</span>
+        <i class="ri-arrow-right-s-line" aria-hidden="true"></i>
+        <span class="current">My Project</span>
+      </nav>
 
-        <section class="project-header" aria-labelledby="project-title">
-            <div class="info-left">
-                <h2 id="project-title" class="project-name">My Project</h2>
-                <p class="project-description">Website refresh. A clearer home for our product.</p>
-            </div>
-
-            <div class="info-right">
-                <button class="share" type="button"><i class="ri-share-line" aria-hidden="true"></i> Share</button>
-            </div>
-        </section>
-
-        <nav class="navbar-left" aria-label="Project views">
-            <button class="nav-btn active" type="button">Board</button>
-            <button class="nav-btnLeft" type="button">List</button>
-            <button class="nav-btnLeft" type="button">Calendar</button>
-            <button class="nav-btnLeft" type="button">Notes</button>
-        </nav>
-
-        <div class="navbar-right" aria-label="Board filters">
-            <button class="nav-btnRight" type="button"><i class="ri-filter-2-line" aria-hidden="true"></i> Filter</button>
-            <button class="nav-btnRight" type="button"><i class="ri-user-line" aria-hidden="true"></i> My Tasks</button>
-            <button type="button" aria-label="More options"><i class="ri-more-line" aria-hidden="true"></i></button>
+      <section class="project-header">
+        <div class="project-info">
+          <h1>My Project</h1>
+          <p>Website refresh · A clearer home for our product.</p>
         </div>
 
-        <hr>
+        <div class="project-toolbar">
+          <!-- <div class="avatar-stack" aria-label="Team members">
+            <span class="avatar-chip">AM</span>
+            <span class="avatar-chip">JL</span>
+            <span class="avatar-chip">SK</span>
+            <span class="avatar-chip muted">+1</span>
+          </div> -->
+          <button class="share-btn" type="button">
+            <i class="ri-share-line" aria-hidden="true"></i>
+            <span>Share</span>
+          </button>
+        </div>
+      </section>
 
-        <section class="kanbanboard" aria-label="Kanban board">
-            <article class="board-column firstboard" aria-labelledby="todo-column-title">
-                <header>
-                    <h3 id="todo-column-title">To Do</h3>
-                    <button type="button" aria-label="Column options"><i class="ri-more-line" aria-hidden="true"></i></button>
-                </header>
+      <div class="tabbar">
+        <div class="tabs-left">
+          <button class="tab active" type="button">
+            <i class="ri-table-line" aria-hidden="true"></i>
+            <span>Board</span>
+          </button>
+          <button class="tab" type="button">
+            <i class="ri-list-check" aria-hidden="true"></i>
+            <span>List</span>
+          </button>
+          <button class="tab" type="button">
+            <i class="ri-calendar-line" aria-hidden="true"></i>
+            <span>Calendar</span>
+          </button>
+          <button class="tab" type="button">
+            <i class="ri-sticky-note-line" aria-hidden="true"></i>
+            <span>Notes</span>
+          </button>
+        </div>
 
-                <ul class="task-list" aria-label="To do tasks">
-                    <li class="task-card content" aria-label="Write homepage copy task">
-                        <div class="task-meta">
-                            <span class="label">Content</span>
-                            <span class="priority">Medium</span>
-                        </div>
-                        <h4>Write homepage copy</h4>
-                        <p class="deadline"><i class="ri-calendar-line" aria-hidden="true"></i> Oct 14</p>
-                        <p class="checklist"><i class="ri-list-check-3" aria-hidden="true"></i> 0/3</p>
-                        <p>Profile</p>
-                    </li>
+        <div class="tabs-right">
+          <button class="tab small" type="button">
+            <i class="ri-filter-2-line" aria-hidden="true"></i>
+            <span>Filter</span>
+          </button>
+          <button class="tab small" type="button">
+            <i class="ri-user-line" aria-hidden="true"></i>
+            <span>My tasks</span>
+          </button>
+          <button class="more-btn" type="button" aria-label="More options">
+            <i class="ri-more-line" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
 
-                    <li class="task-card Development" aria-label="Build responsive pages task">
-                        <div class="task-meta">
-                            <span class="label">Development</span>
-                            <span class="priority high">High</span>
-                        </div>
-                        <h4>Build responsive pages</h4>
-                        <p class="deadline"><i class="ri-calendar-line" aria-hidden="true"></i> Oct 16</p>
-                        <p class="checklist"><i class="ri-list-check-3" aria-hidden="true"></i> 0/4</p>
-                        <p>Profile</p>
-                    </li>
+      <section class="kanbanBoard" aria-label="Kanban board">
+        <article class="board-column" aria-label="To do tasks">
+          <header class="column-header">
+            <h3 class="count-header"><span>To Do</span><span class="count">3</span></h3>
+            <button type="button" aria-label="More options">
+              <i class="ri-more-line" aria-hidden="true"></i>
+            </button>
+          </header>
 
-                    <li class="task-card Review" aria-label="QA launch experience task">
-                        <div class="task-meta">
-                            <span class="label">Review</span>
-                        </div>
-                        <h4>QA the launch experience</h4>
-                        <p class="deadline"><i class="ri-calendar-line" aria-hidden="true"></i> Oct 19</p>
-                        <p class="checklist"><i class="ri-list-check-3" aria-hidden="true"></i> 0/4</p>
-                        <p>Profile</p>
-                    </li>
-                </ul>
+          <ul class="task-list">
+            <li class="task-card">
+              <div class="task-meta">
+                <span class="label">Content</span>
+                <span class="priority medium">Medium</span>
+              </div>
+              <h4>Write homepage copy</h4>
+              <div class="meta-row">
+                <span><i class="ri-calendar-line" aria-hidden="true"></i> Oct 14</span>
+                <span><i class="ri-checkbox-line" aria-hidden="true"></i> 0/3</span>
+                <!-- <span class="avatar" aria-label="Assignee">AM</span> -->
+              </div>
+            </li>
 
-                <button class="add-card" type="button"><i class="ri-add-line" aria-hidden="true"></i> Add Card</button>
-            </article>
+            <li class="task-card">
+              <div class="task-meta">
+                <span class="label">Development</span>
+                <span class="priority high">High</span>
+              </div>
+              <h4>Build responsive pages</h4>
+              <div class="meta-row">
+                <span><i class="ri-calendar-line" aria-hidden="true"></i> Oct 16</span>
+                <span><i class="ri-checkbox-line" aria-hidden="true"></i> 0/5</span>
+                <!-- <span class="avatar" aria-label="Assignee">SK</span> -->
+              </div>
+            </li>
 
-            <article class="board-column secondboard" aria-labelledby="in-progress-column-title">
-                <header>
-                    <h3 id="in-progress-column-title">In Progress</h3>
-                    <button type="button" aria-label="Column options"><i class="ri-more-line" aria-hidden="true"></i></button>
-                </header>
+            <li class="task-card">
+              <div class="task-meta">
+                <span class="label">Review</span>
+              </div>
+              <h4>QA the launch experience</h4>
+              <div class="meta-row">
+                <span><i class="ri-calendar-line" aria-hidden="true"></i> Oct 19</span>
+                <span><i class="ri-checkbox-line" aria-hidden="true"></i> 0/4</span>
+                <!-- <span class="avatar" aria-label="Assignee">AM</span> -->
+              </div>
+            </li>
+          </ul>
 
-                <ul class="task-list" aria-label="In progress tasks">
-                    <li class="task-card Design" aria-label="Design homepage task">
-                        <div class="task-meta">
-                            <span class="label">Design</span>
-                            <span class="priority high">High</span>
-                        </div>
-                        <h4>Design homepage</h4>
-                        <p class="deadline"><i class="ri-calendar-line" aria-hidden="true"></i> Oct 12</p>
-                        <p class="checklist"><i class="ri-list-check-3" aria-hidden="true"></i> 2/4</p>
-                        <p>Profile</p>
-                        <p class="attachment">2 attachments</p>
-                        <p class="attachment">2 comments</p>
-                    </li>
+          <button class="add-card" type="button">
+            <i class="ri-add-line" aria-hidden="true"></i> Add Card
+          </button>
+        </article>
 
-                    <li class="task-card Design" aria-label="Create component library task">
-                        <div class="task-meta">
-                            <span class="label">Design</span>
-                            <span class="priority">Medium</span>
-                        </div>
-                        <h4>Create component library</h4>
-                        <p class="deadline"><i class="ri-calendar-line" aria-hidden="true"></i> Oct 13</p>
-                        <p class="checklist"><i class="ri-list-check-3" aria-hidden="true"></i> 3/6</p>
-                        <p>Profile</p>
-                    </li>
-                </ul>
+        <article class="board-column" aria-label="In progress tasks">
+          <header class="column-header">
+            <h3 class="count-header"><span>Doing</span><span class="count">2</span></h3>
+            <button type="button" aria-label="More options">
+              <i class="ri-more-line" aria-hidden="true"></i>
+            </button>
+          </header>
 
-                <button type="button" class="add-card"><i class="ri-add-line" aria-hidden="true"></i> Add Card</button>
-            </article>
+          <ul class="task-list">
+            <li class="task-card">
+              <div class="task-meta">
+                <span class="label">Design</span>
+                <span class="priority high">High</span>
+              </div>
+              <h4>Design homepage</h4>
+              <div class="meta-row">
+                <span><i class="ri-calendar-line" aria-hidden="true"></i> Oct 12</span>
+                <span><i class="ri-checkbox-line" aria-hidden="true"></i> 2/4</span>
+                <!-- <span class="avatar" aria-label="Assignee">AM</span> -->
+              </div>
+              <div class="sub-info">
+                <span>2 attachments</span>
+                <span>2 comments</span>
+              </div>
+            </li>
 
-            <article class="board-column thirdboard" aria-labelledby="done-column-title">
-                <header>
-                    <h3 id="done-column-title">Done</h3>
-                    <button type="button" aria-label="Column options"><i class="ri-more-line" aria-hidden="true"></i></button>
-                </header>
+            <li class="task-card">
+              <div class="task-meta">
+                <span class="label">Design</span>
+                <span class="priority medium">Medium</span>
+              </div>
+              <h4>Create component library</h4>
+              <div class="meta-row">
+                <span><i class="ri-calendar-line" aria-hidden="true"></i> Oct 13</span>
+                <span><i class="ri-checkbox-line" aria-hidden="true"></i> 3/6</span>
+                <!-- <span class="avatar" aria-label="Assignee">SK</span> -->
+              </div>
+            </li>
+          </ul>
 
-                <ul class="task-list" aria-label="Completed tasks">
-                    <li class="task-card Research" aria-label="Audit current website task">
-                        <div class="task-meta">
-                            <span class="label">Research</span>
-                        </div>
-                        <h4>Audit the current website</h4>
-                        <p class="deadline"><i class="ri-checkbox-circle-line" aria-hidden="true"></i> Oct 3</p>
-                        <p class="checklist"><i class="ri-list-check-3" aria-hidden="true"></i> 4/4</p>
-                        <p>Profile</p>
-                    </li>
+          <button class="add-card" type="button">
+            <i class="ri-add-line" aria-hidden="true"></i> Add Card
+          </button>
+        </article>
 
-                    <li class="task-card Planning" aria-label="Define sitemap task">
-                        <div class="task-meta">
-                            <span class="label">Planning</span>
-                        </div>
-                        <h4>Define sitemap</h4>
-                        <p class="deadline"><i class="ri-checkbox-circle-line" aria-hidden="true"></i> Oct 6</p>
-                        <p class="checklist"><i class="ri-list-check-3" aria-hidden="true"></i> 3/3</p>
-                        <p>Profile</p>
-                    </li>
-                </ul>
+        <article class="board-column" aria-label="Completed tasks">
+          <header class="column-header">
+            <h3 class="count-header"><span>Done</span><span class="count">2</span></h3>
+            <button type="button" aria-label="More options">
+              <i class="ri-more-line" aria-hidden="true"></i>
+            </button>
+          </header>
 
-                <button type="button" class="add-card"><i class="ri-add-line" aria-hidden="true"></i> Add Card</button>
-            </article>
+          <ul class="task-list">
+            <li class="task-card">
+              <div class="task-meta">
+                <span class="label">Research</span>
+              </div>
+              <h4>Audit the current website</h4>
+              <div class="meta-row">
+                <span><i class="ri-calendar-line" aria-hidden="true"></i> Oct 3</span>
+                <span><i class="ri-checkbox-line" aria-hidden="true"></i> 4/4</span>
+                <!-- <span class="avatar" aria-label="Assignee">AM</span> -->
+              </div>
+            </li>
 
-            <div class="fourthboard">
-                <button class="add-column" type="button"><i class="ri-add-line" aria-hidden="true"></i> Add Column</button>
-            </div>
-        </section>
+            <li class="task-card">
+              <div class="task-meta">
+                <span class="label">Planning</span>
+              </div>
+              <h4>Define sitemap</h4>
+              <div class="meta-row">
+                <span><i class="ri-calendar-line" aria-hidden="true"></i> Oct 6</span>
+                <span><i class="ri-checkbox-line" aria-hidden="true"></i> 3/3</span>
+                <!-- <span class="avatar" aria-label="Assignee">AM</span> -->
+              </div>
+            </li>
+          </ul>
 
-        <footer class="update" aria-live="polite">
-            <p>• 7 Tasks · 2 Completed · Updated a few minutes ago</p>
-        </footer>
+          <button class="add-card" type="button">
+            <i class="ri-add-line" aria-hidden="true"></i> Add Card
+          </button>
+        </article>
+
+        <button type="button" class="add-column">
+          <i class="ri-add-line" aria-hidden="true"></i> Add Column
+        </button>
+      </section>
+
+      <div class="board-footer">
+        <span>• 7 tasks · 2 completed · Updated a few minutes ago</span>
+      </div>
     </main>
-</body>
+  </body>
 </html>
